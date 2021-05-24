@@ -15,6 +15,9 @@
 
 ### Dense layer
 - Dense layer는 입력과 출력을 이어주는 은닉층으로 주로 사용
+- Dense layer에서 activation='relu'라고 설정해주는 것의 의미
+  - 이미지로부터 추출한 feature map에서 양의 값만 활성화 시키는 것
+  - 이미지에서 특히 두드러지는 특징을 추출하는 것 
 
 ### CNN 개요
 - Convolution + Classifier로 구성
