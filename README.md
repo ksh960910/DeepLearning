@@ -26,3 +26,10 @@
 ### kernel과 filter 차이
 - kernel 이 여러개 모여서 filter를 이루는것
 - filter 하나에 kernel이 몇개있는지 아는 법 --> Input shape의 차원수와 동일함 (28, 28, 1) 이면 filter당 kernel 도 1개
+
+### Convolution 연산 시 kernel, filter 수에 대한 이해
+- Input으로 (3,3,2)가 들어오게되면 한개의 filter의 kernel(channel)수는 2이다
+  - convolution 연산을 위해 아구가 맞아야 하기 때문
+- **출력 feature map의 channel 수는 filter 수와 동일
+#### 정리하자면 단일 filter의 channel 수는 입력 feature map의 channel 수와 동일하고 전체 filter의 갯수는 출력 feature map의 channel 수와 동일하다
+
