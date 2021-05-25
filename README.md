@@ -33,3 +33,9 @@
   - 출력 feature map의 channel 수는 filter 수와 동일
 #### 정리하자면 단일 filter의 channel 수는 입력 feature map의 channel 수와 동일하고 전체 filter의 갯수는 출력 feature map의 channel 수와 동일하다
 
+### output shape 구하는 공식
+- O = (I - F + 2P)/S + 1
+  - O : output, I : Input, F : kernel size, P : padding, S : stride
+  - input이 5x5이고 output은 3x3으로 만들고 kernel size가 3x3이고 stride를 2칸씩 가고싶다면 padding을 얼만큼 늘려야할까?
+  - 3 = (5 - 3 + 2P)/2 + 1 ==> P = 1
+  
