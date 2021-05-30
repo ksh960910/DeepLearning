@@ -38,4 +38,8 @@
   - O : output, I : Input, F : kernel size, P : padding, S : stride
   - input이 5x5이고 output은 3x3으로 만들고 kernel size가 3x3이고 stride를 2칸씩 가고싶다면 padding을 얼만큼 늘려야할까?
   - 3 = (5 - 3 + 2P)/2 + 1 ==> P = 1
+
+### kernel size 정하는 기준
+- 이미지의 크기가 작은경우 kernel size를 크게하면 데이터 손실이 많이 일어날 수 있기 때문에 작은 kernel size로 해도 충분하다
+- 
   
