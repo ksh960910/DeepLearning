@@ -54,4 +54,17 @@
 ### He initialization
 - Relu에 보다 최적화된 초기화방법
 - xavier 방법이랑 비슷한데 fan in으로만 계산함
+
+## Scaling
+
+### scaling의 의미
+- x1(연봉처럼 단위가 큰 데이터), x2(나이처럼 단위가 작은 데이터)의 가중치 w1, w2가 있다면 y=x1w1 + x2w2 + ... 이런식이기 때문에 w1과 w2간의 불균형이 이뤄지고
+- loss function의 gradient descent 또한 w2를 줄이는것에 치우쳐지기 시작하므로 scaling을 꼭 해줘야함
+- 
+### Batch Normalization
+- 신경망 내부에서 층 을 통과할때마다 입력 데이터 분포가 변함 (Internal covariate shift) (귀마개 끼고 단어 전달하기 게임 생각하면 이해가 쉬움)
+- 정규화 후에 scaling, shift로 너무 loss함수에 충실하지 않게 일종의 noise 추가해주어 좀더 일반화된 모델이 되는 효과
+- weight initialization을 크게 신경쓸 필요가 없어짐
+- activation 전에 batch normalization 적용
+- 
   
