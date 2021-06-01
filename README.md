@@ -41,5 +41,17 @@
 
 ### kernel size 정하는 기준
 - 이미지의 크기가 작은경우 kernel size를 크게하면 데이터 손실이 많이 일어날 수 있기 때문에 작은 kernel size로 해도 충분하다
-- 
+
+## Weight Initialization method
+
+### Xavier glorot initialization
+- 초기 weight를 설정할 때 효율적으로 초기화하도록 하는 방법
+- 입력노드(fan in)와 출력노드(fan out)이 많아질수록 표준편차가 작아짐 (가파른모양)
+- 따라서 glorot normal을 이용하여 적당히 조절해줌
+- 주로 sigmoid나 hyperbolic tangent h 에 최적화된 방법
+- keras 기본 kernel_initializer로 glorot_uniform이 설정돼있음
+
+### He initialization
+- Relu에 보다 최적화된 초기화방법
+- xavier 방법이랑 비슷한데 fan in으로만 계산함
   
