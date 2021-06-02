@@ -66,5 +66,7 @@
 - 정규화 후에 scaling, shift로 너무 loss함수에 충실하지 않게 일종의 noise 추가해주어 좀더 일반화된 모델이 되는 효과
 - weight initialization을 크게 신경쓸 필요가 없어짐
 - activation 전에 batch normalization 적용
-- 
-  
+
+### Shuffle
+- 일반적으로 shuffle하면 성능이 좋아짐
+- batch 안에서의 shuffle과 전체 데이터의 shuffle을 잘 구분해야함 
