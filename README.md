@@ -92,3 +92,8 @@
 - 가로세로 영역을 subsampling 하는 것이 아닌, 채널별로 평균 값을 구하는 방법
 - Feature map의 채널수가 많을 때 사용, 채널수가 많이 없으면 (512 이하정도) Flatten이 유리
  - Flatten에서 Classification dense layer로 넘어갈 때 파라미터가 너무 많아 오버피팅이 될 가능성이 높기 때문
+
+### Weight Regularization
+- 모델이 loss를 줄이는데만 집중하여 오버피팅 되는 것을 막기 위해 가중치에도 규제를 줌
+- loss 함수에 작은 수를 더해줘서 loss 결과가 어느정도 무뎌지게 만듦
+- 
