@@ -70,3 +70,25 @@
 ### Shuffle
 - 일반적으로 shuffle하면 성능이 좋아짐
 - batch 안에서의 shuffle과 전체 데이터의 shuffle을 잘 구분해야함 
+
+## 성능 향상을 위해 알아야 할 것
+
+### batch size
+- 대부분의 경우 batch size는 작을수록 성능이 높아짐
+- 8보다는 크고 32보다는 작은 수일때 가장 높은 성능
+
+### learning rate
+- ```ReduceLROnPlateau```와 같은 learning rate 동적변경을 해줘야 성능 향상에 큰 도움이 된다
+
+### Callback
+- 몇 iteration동안 성능 향상이 없다면 early stopping을 통해 일찍 중단시키거나 
+- monitor하고 싶은 (loss 함수라던지, accuracy라던지, val_loss 라던지) 부분의 성능이 가장 좋을때의 weight값을 checkpoint로 저장시킬수도 있음
+
+### Filter, Layer 수
+- filter수나 layer 수가 많아질수록 성능이 조금 좋아지기는 하지만 모든 경우에 이런 것은 아니다
+- filter수와 layer 수가 많아질수록 parameter갯수가 많아지기 때문에 마지막 단계에서 ```MaxPooling2D```를 사용하지 않고 strides=2로 줘 maxpooling과 비슷한 효과를 내며 연산 속도를 줄일 수 있다
+
+### Global Average Pooling
+- 가로세로 영역을 subsampling 하는 것이 아닌, 채널별로 평균 값을 구하는 방법
+- Feature map의 채널수가 많을 때 사용, 채널수가 많이 없으면 (512 이하정도) Flatten이 유리
+ - Flatten에서 Classification dense layer로 넘어갈 때 파라미터가 너무 많아 오버피팅이 될 가능성이 높기 때문
