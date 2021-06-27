@@ -100,3 +100,5 @@
 
 ### Gradient tape
 - tape에  계산을 기록
+
+### next
